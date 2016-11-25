@@ -109,6 +109,10 @@ public class SudokuWindow extends JFrame implements ActionListener {
 					if (e.getID() == FocusEvent.FOCUS_LOST) {
 						if (getText() == null || getText().isEmpty()) {
 							setValue(null);
+						} else {
+							if(getText().equals("0")) {
+								setValue(null);
+							}
 						}
 					} else if (e.getID() == FocusEvent.FOCUS_GAINED) {
 						if (getText() != null && !getText().isEmpty()) {
